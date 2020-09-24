@@ -2,8 +2,6 @@
 
 This is a reference project that demonstrate how to build web UI widget that can be embedded into 3rd party website. See walkthrough for details [here](https://blog.jenyay.com/web-ui-widget/).
 
-![](https://github.com/jenyayel/help-widget/workflows/CI/badge.svg?branch=master)
-
 This structure provides those advantages:
 
 * Small footprint and solid snippet on hosting website (see [usage](##usage))
