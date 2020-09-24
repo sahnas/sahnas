@@ -48,4 +48,5 @@ npm start
 This will open browser with "demo" page which hosts the widget.
 
 ## License
+
 The source and documentation in this project are released under the [MIT License](LICENSE)
