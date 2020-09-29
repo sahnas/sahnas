@@ -28,7 +28,10 @@ export interface AppConfigurations {
 export type Configurations = InfraConfigurations & AppConfigurations;
 
 export interface FaqModel {
-    question: string;
+    type: [];
+    name: {
+        french: string
+    };
     answer: string;
 }
 

@@ -18,7 +18,7 @@ const Main = () => {
             case '/thankyou':
                 return config.text.thankYouTitle ?? 'Thank You';
             case '/faq':
-                return config.text.faqTitle ?? 'FAQ';
+                return config.text.faqTitle ?? 'POKEMON';
             case '/':
             default:
                 return config.text.formTitle ?? 'Contact Form';

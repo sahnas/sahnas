@@ -9,11 +9,11 @@ import { Configurations } from './models';
  */
 const defaultConfig: Configurations = {
     debug: false,
-    serviceBaseUrl: 'https://help-widget-backend.glitch.me',
+    serviceBaseUrl: 'http://auth.comexposium-sso.com/',
     minimized: false,
     disableDarkMode: false,
     text: {},
-    styles: {}
+    styles: {},
 };
 
 // main entry point - calls loader and render Preact app into supplied element
