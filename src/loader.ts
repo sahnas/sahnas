@@ -35,14 +35,14 @@ export default (
     const loaderObject: LoaderObject = win[instanceName];
     if (!loaderObject || !loaderObject.q) {
         throw new Error(`Le widget ne trouve pas de LoaderObject pour l\'instance ${instanceName}. ` +
-            `Ou bien le script de chargement n\'a pas été modifié, pas d'appel à la methode 'init' ` +
+            `Ou bien le script de chargement n\'a pas été modifié, pas d'appel à la méthode 'init' ` +
             `Ou alors il y a un conflit avec l\'objet \`window.${instanceName}\` .`);
     }
 
     // check that the widget is not loaded twice under the same name
     if (win[`loaded-${instanceName}`]) {
         throw new Error(`Le widget ${instanceName} est déjà chargé. `
-            + `Il existe plusieurs instanaces avec le même nom (ex: '${DEFAULT_NAME}')`);
+            + `Il existe plusieurs instances avec le même nom (ex: '${DEFAULT_NAME}')`);
     }
 
     // iterate over all methods that were called up until now
@@ -50,7 +50,7 @@ export default (
         const item = loaderObject.q[i];
         const methodName = item[0];
         if (i === 0 && methodName !== 'init') {
-            throw new Error(`Impossible de lancer le Widget ${instanceName}. La methode 'init' doit être appelée en premier.`);
+            throw new Error(`Impossible de lancer le Widget ${instanceName}. La méthode 'init' doit être appelée en premier.`);
         } else if (i !== 0 && methodName === 'init') {
             continue;
         }
@@ -73,7 +73,7 @@ export default (
             // TODO: here you can handle additional async interactions
             // with the widget from page (e.q. `_hw('refreshStats')`)
             default:
-                console.warn(`Methode non supportee ${methodName}`, item[1]);
+                console.warn(`Méthode non supportee ${methodName}`, item[1]);
         }
     }
 
@@ -84,7 +84,7 @@ export default (
             // TODO: here you can handle additional sync interactions
             // with the widget from page
             default:
-                console.warn(`Methode non supportee ${method}`, args);
+                console.warn(`Méthode non supportee ${method}`, args);
         }
     };
 };
