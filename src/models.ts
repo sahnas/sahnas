@@ -28,11 +28,8 @@ export interface AppConfigurations {
 export type Configurations = InfraConfigurations & AppConfigurations;
 
 export interface FaqModel {
-    type: [];
-    name: {
-        french: string
-    };
-    answer: string;
+    question: string;
+    answer: [];
 }
 
 export interface FormModel {

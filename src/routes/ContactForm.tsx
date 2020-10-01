@@ -56,8 +56,8 @@ const ContactForm = () => {
         <div>
             <p>{config.text.formSubTitle ??
                 <Fragment>
-                    Leave your message and we'll get back to you shortly.
-                    You can also read our <RouteLink href='/faq'>POKEMON</RouteLink>.</Fragment>}</p>
+                    Envoyez-moi un message.
+                    Vous pouvez aussi consulter la <RouteLink href='/faq'>FAQ</RouteLink>.</Fragment>}</p>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();

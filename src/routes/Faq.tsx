@@ -16,12 +16,12 @@ const Faq = () => {
     const [statusText, setStatusText] = useState('');
 
     const loaders = [
-        useTimeout(() => !questions && setStatusText('Loading...'), 500),
-        useTimeout(() => !questions && setStatusText('Still loading...'), 5000),
+        useTimeout(() => !questions && setStatusText('Chargement...'), 500),
+        useTimeout(() => !questions && setStatusText('Ca charge toujours...'), 5000),
         useTimeout(
             () =>
                 !questions &&
-                setStatusText("Backend still didn't return results..."),
+                setStatusText('Le backend ne semble pas chaud...'),
             10000
         ),
     ];
@@ -30,7 +30,7 @@ const Faq = () => {
         service
             ?.getFaq()
             .then(setQuestions)
-            .catch(() => setStatusText('Failed to load, try again later.'))
+            .catch(() => setStatusText('Impossible de charger les questions, Ressayez plus tard.'))
             .then(() => loaders.forEach((c) => c()));
     }, [service]);
 
@@ -41,8 +41,7 @@ const Faq = () => {
             ) : (
                 <Fragment>
                     <p>
-                        Here is a list of frequently asked questions. You can
-                        also contact us <RouteLink href='/'> here</RouteLink>.
+                        Voici la FAQ. Vous pouvez aussi me contacter<RouteLink href='/'> ici</RouteLink>.
                     </p>
                     <ul className={style.root}>
                         {questions.map((q, i) => (
@@ -56,9 +55,9 @@ const Faq = () => {
                                     href='javascript:;'
                                     onClick={() => setVisible(i)}
                                 >
-                                    {q.name.french}
+                                    {q.question}
                                 </a>
-                                {q.type.map((t, id) => (
+                                {q.answer.map((t, id) => (
                                     <span key={id}>{t}</span>
                                 ))}
                             </li>

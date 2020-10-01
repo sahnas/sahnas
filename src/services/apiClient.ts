@@ -25,7 +25,7 @@ export class ApiClient implements WidgetApi {
 
     constructor(options: ApiClientOptions) {
         if (!options?.baseUrl) {
-            throw new Error('baseUrl is required');
+            throw new Error('la baseUrl est obligatoire');
         }
 
         this.client = axios.create({
@@ -35,7 +35,7 @@ export class ApiClient implements WidgetApi {
         this.client.interceptors.response.use(
             undefined,
             (error: AxiosError) => {
-                console.log(`Failed to call API`, error.response?.status, error.response?.data);
+                console.log(`Erreur pendant l\'appel à l\'API`, error.response?.status, error.response?.data);
                 return Promise.reject(error);
             });
         if (options.debug) {
@@ -76,17 +76,17 @@ export class ApiClient implements WidgetApi {
 
     private useDebugLogs() {
         this.client.interceptors.request.use((config) => {
-            console.info('Calling API', config.url, config.params);
+            console.info('Appel de l\'API', config.url, config.params);
             return config;
         });
 
         this.client.interceptors.response.use(
             (response) => {
-                console.info('Got response from API', response.config.url, response.data);
+                console.info('Reponse de l\'API', response.config.url, response.data);
                 return response;
             },
             (error: AxiosError) => {
-                console.info('There was an error calling API',
+                console.info('Il y a eu une erreur pendant l\'appel à l\'API',
                     error.request?.url, error.response?.status, error.message);
                 return Promise.reject(error);
             });
@@ -98,7 +98,7 @@ export class ApiClient implements WidgetApi {
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             } else if (debug) {
-                console.log('No token returned by factory, skipping Authorization header');
+                console.log('Pas de token en vue, on oublie l\'autorisation');
             }
 
             return config;

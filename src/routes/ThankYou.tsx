@@ -8,10 +8,10 @@ const ThankYou = () => {
 
     return (
         <div>
-            <h2>{config.text.thankYouTitle ?? 'Thank you'}</h2>
-            <p>{config.text.thankYouBody ?? 'Your message was sent to us. We\'ll contact you shortly.'}</p>
+            <h2>{config.text.thankYouTitle ?? 'Merci'}</h2>
+            <p>{config.text.thankYouBody ?? 'Votre message a bien été envoyé.'}</p>
             <p>
-                Meantime you can look at <RouteLink href='/faq'>Pokemon area</RouteLink> for most common questions.</p>
+                En attendant, vous pouvez consulter la <RouteLink href='/faq'>FAQ</RouteLink>.</p>
         </div>
     );
 };

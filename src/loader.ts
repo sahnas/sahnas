@@ -1,7 +1,7 @@
 import { Configurations } from './models';
 
 type MethodNames = 'init';
-export const DEFAULT_NAME = '_hw';
+export const DEFAULT_NAME = 'sahnas';
 
 /**
  * Represents a model that is created in embedded script
@@ -34,15 +34,15 @@ export default (
     const instanceName = scriptElement?.attributes.getNamedItem('id')?.value ?? DEFAULT_NAME;
     const loaderObject: LoaderObject = win[instanceName];
     if (!loaderObject || !loaderObject.q) {
-        throw new Error(`Widget didn't find LoaderObject for instance [${instanceName}]. ` +
-            `The loading script was either modified, no call to 'init' method was done ` +
-            `or there is conflicting object defined in \`window.${instanceName}\` .`);
+        throw new Error(`Le widget ne trouve pas de LoaderObject pour l\'instance ${instanceName}. ` +
+            `Ou bien le script de chargement n\'a pas été modifié, pas d'appel à la methode 'init' ` +
+            `Ou alors il y a un conflit avec l\'objet \`window.${instanceName}\` .`);
     }
 
     // check that the widget is not loaded twice under the same name
     if (win[`loaded-${instanceName}`]) {
-        throw new Error(`Widget with name [${instanceName}] was already loaded. `
-            + `This means you have multiple instances with same identifier (e.g. '${DEFAULT_NAME}')`);
+        throw new Error(`Le widget ${instanceName} est déjà chargé. `
+            + `Il existe plusieurs instanaces avec le même nom (ex: '${DEFAULT_NAME}')`);
     }
 
     // iterate over all methods that were called up until now
@@ -50,7 +50,7 @@ export default (
         const item = loaderObject.q[i];
         const methodName = item[0];
         if (i === 0 && methodName !== 'init') {
-            throw new Error(`Failed to start Widget [${instanceName}]. 'init' must be called before other methods.`);
+            throw new Error(`Impossible de lancer le Widget ${instanceName}. La methode 'init' doit être appelée en premier.`);
         } else if (i !== 0 && methodName === 'init') {
             continue;
         }
@@ -58,7 +58,7 @@ export default (
             case 'init':
                 const loadedObject = Object.assign(defaultConfig, item[1]);
                 if (loadedObject.debug) {
-                    console.log(`Starting widget [${instanceName}]`, loadedObject);
+                    console.log(`Lancement du widget ${instanceName}`, loadedObject);
                 }
 
                 // the actual rendering of the widget
@@ -73,7 +73,7 @@ export default (
             // TODO: here you can handle additional async interactions
             // with the widget from page (e.q. `_hw('refreshStats')`)
             default:
-                console.warn(`Unsupported method [${methodName}]`, item[1]);
+                console.warn(`Methode non supportee ${methodName}`, item[1]);
         }
     }
 
@@ -84,7 +84,7 @@ export default (
             // TODO: here you can handle additional sync interactions
             // with the widget from page
             default:
-                console.warn(`Unsupported method [${method}]`, args);
+                console.warn(`Methode non supportee ${method}`, args);
         }
     };
 };
