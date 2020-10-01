@@ -16,12 +16,12 @@ const Main = () => {
     const getTitle = (route: string) => {
         switch (route) {
             case '/thankyou':
-                return config.text.thankYouTitle ?? 'Thank You';
+                return config.text.thankYouTitle ?? 'Merci';
             case '/faq':
-                return config.text.faqTitle ?? 'Faq';
+                return config.text.faqTitle ?? 'FAQ';
             case '/':
             default:
-                return config.text.formTitle ?? 'Contact Form';
+                return config.text.formTitle ?? 'Contact';
         }
     };
 

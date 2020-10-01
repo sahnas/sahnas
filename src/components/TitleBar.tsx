@@ -22,7 +22,7 @@ const TitleBar = (props: OwnProps) => {
     return (
         <div className={style.root} onClick={() => setMinimized(!minimized)}>
             <h4>{minimized
-                ? config.text.minimizedTitle ?? 'Faq'
+                ? config.text.minimizedTitle ?? 'FAQ'
                 : props.routeTitle}</h4>
             <a
                 className={minimized ? style.minimized : style.open}
