@@ -1,4 +1,4 @@
-# Help Web Widget
+# Sahnas Web Widget
 
 This is a reference project that demonstrate how to build web UI widget that can be embedded into 3rd party website.
 
