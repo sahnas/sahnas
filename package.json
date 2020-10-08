@@ -3,8 +3,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build-release": "webpack --config webpack.config.js --env.prod --display-modules",
-    "start": "webpack-dev-server --open",
-    "go": "webpack-dev-server --open --port 9000",
+    "start": "webpack-dev-server --watch --open",
+    "go": "webpack-dev-server --watch --open --port 9000",
     "lint": "tslint --project tsconfig.json",
     "test": "jest"
   },
