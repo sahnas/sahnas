@@ -63,9 +63,11 @@ The widget dev setup is similar to regular client application. To get started:
 ```bash
 npm i
 npm start
+npm run go
 ```
 
-This will open browser with "demo" page which hosts the widget.
+This will open browser with a demo page which hosts the widget. 
+The `npm run go` command is the same command as `npm start` but it will run the dev server on port 9000.
 
 ## License
 
