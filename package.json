@@ -1,5 +1,5 @@
 {
-  "name": "widget",
+  "name": "sahnas-widget",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build-release": "webpack --config webpack.config.js --env.prod --display-modules",
