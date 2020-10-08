@@ -35,8 +35,8 @@ export default (
     const loaderObject: LoaderObject = win[instanceName];
     if (!loaderObject || !loaderObject.q) {
         throw new Error(`Le widget ne trouve pas de LoaderObject pour l\'instance ${instanceName}. ` +
-            `Ou bien le script de chargement n\'a pas été modifié, pas d'appel à la méthode 'init' ` +
-            `Ou alors il y a un conflit avec l\'objet \`window.${instanceName}\` .`);
+            `Le script de chargement a été modifié ou n\' appelle pas la méthode 'init' ` +
+            `ou bien il y a un conflit avec l\'objet \`window.${instanceName}\` .`);
     }
 
     // check that the widget is not loaded twice under the same name
