@@ -26,6 +26,7 @@ module.exports = (env) => {
         minimize: !isDevBuild,
       },
       mode: isDevBuild ? "development" : "production",
+      devtool: 'eval-source-map',
       module: {
         rules: [
           // packs SVG's discovered in url() into bundle
