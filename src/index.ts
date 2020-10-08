@@ -11,7 +11,7 @@ const defaultConfig: Configurations = {
     debug: false,
     serviceBaseUrl: 'http://auth.comexposium-sso.com/',
     minimized: false,
-    disableDarkMode: false,
+    disableDarkMode: true,
     text: {},
     styles: {},
 };
