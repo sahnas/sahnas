@@ -34,7 +34,27 @@ During initialization you can pass additional configurations to widget like so:
 +sahnas('init', { minimized: true });
 ```
 
-You can find a full list of configurations in `AppConfigurations` interface.
+You can find a full list of configurations in `AppConfigurations` interface:
+
+``` javascript
+{
+    debug: boolean;
+    serviceBaseUrl: string;
+    minimized: boolean;
+    disableDarkMode: boolean;
+    text: {
+        minimizedTitle?: string;
+        formTitle?: string;
+        formSubTitle?: string;
+        thankYouTitle?: string;
+        thankYouBody?: string;
+        faqTitle?: string;
+    };
+    styles: {
+        classNameContainer?: string;
+    };
+}
+```
 
 ## Develop
 
