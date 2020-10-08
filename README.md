@@ -30,7 +30,7 @@ In order to embed the widget add the following snippet at any location on the ho
 During initialization you can pass additional configurations to widget like so:
 
 ```javascript
-sahnas('init', { minimized: false, disableDarkMode: false, debug: true, styles: { classNameContainer: "sahnas" } });
+sahnas('init', { minimized: false, disableDarkMode: false, styles: { classNameContainer: "sahnas" } });
 ```
 
 You can find a full list of configurations in `AppConfigurations` interface:
