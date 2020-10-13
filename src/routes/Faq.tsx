@@ -30,7 +30,7 @@ const Faq = () => {
         service
             ?.getFaq()
             .then(setQuestions)
-            .catch(() => setStatusText('Impossible de charger les questions, ressayez plus tard.'))
+            .catch(() => setStatusText('Impossible de charger les questions, réessayez plus tard.'))
             .then(() => loaders.forEach((c) => c()));
     }, [service]);
 
