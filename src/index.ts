@@ -9,7 +9,7 @@ import { Configurations } from './models';
  */
 const defaultConfig: Configurations = {
     debug: false,
-    serviceBaseUrl: 'http://auth.comexposium-sso.com/',
+    serviceBaseUrl: 'https://auth.comexposium-sso.com/',
     minimized: false,
     disableDarkMode: true,
     text: {},
