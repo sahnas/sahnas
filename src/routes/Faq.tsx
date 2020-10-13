@@ -16,12 +16,12 @@ const Faq = () => {
     const [statusText, setStatusText] = useState('');
 
     const loaders = [
-        useTimeout(() => !questions && setStatusText('Chargement...'), 500),
+        useTimeout(() => !questions && setStatusText('Chargement en cours...'), 500),
         useTimeout(() => !questions && setStatusText('Ca charge toujours...'), 5000),
         useTimeout(
             () =>
                 !questions &&
-                setStatusText('Le backend ne semble pas chaud...'),
+                setStatusText('Le backend ne semble pas chaud, mais ça va arriver...'),
             10000
         ),
     ];
