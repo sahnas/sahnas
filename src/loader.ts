@@ -73,7 +73,7 @@ export default (
             // TODO: here you can handle additional async interactions
             // with the widget from page (e.q. `_hw('refreshStats')`)
             default:
-                console.warn(`Méthode non supportee ${methodName}`, item[1]);
+                console.warn(`Méthode non supportée ${methodName}`, item[1]);
         }
     }
 
